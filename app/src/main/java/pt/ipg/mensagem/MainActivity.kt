@@ -1,8 +1,10 @@
 package pt.ipg.mensagem
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,6 +13,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun enviamensagem(view: View) {
+        val editTextMensagem = findViewById<EditText>(R.id.editTextMensagem)
+        val mensagem = editTextMensagem.text.toString()
+
+        val intent = Intent(this, MostraMensagemActivity::class.java)
+        startActivity(intent)
+
 
     }
 }
